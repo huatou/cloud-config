@@ -9,7 +9,7 @@ spring:
   application:
     name: server-zuul #指定服务名
   zipkin:
-    base-url: http://${zigar.hosename}:9411/
+    base-url: http://${zigar.hostname}:9411/
   sleuth:
     sampler:
       probability: 1.0   #2.0后percentage改为probability
@@ -36,7 +36,7 @@ management:
 zuul:
   routes: #定义服务转发规则
     file-service: #file-service这个名字任意取的
-      serviceId: servie-file
+      serviceId: service-file
       path: /file-service/** #配置请求URL的请求规则
     user-service: #user-service这个名字任意取的
       serviceId: service-user
